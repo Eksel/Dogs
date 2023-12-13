@@ -1,0 +1,16 @@
+.cards-conteinter{
+    background-color: rgb(196, 243, 219); 
+    display: flex;
+    flex-direction: column;
+}
+.cards-conteinter h2 {
+    font-size: 4rem;
+    color: white;
+    text-transform: uppercase;
+    text-shadow: 3px 3px 0 brown,0 0 2px brown;
+    
+    background-color: rgb(71, 136, 97);
+    text-align: center;
+    padding: 2rem;
+}
+

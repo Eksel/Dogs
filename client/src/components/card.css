@@ -1,0 +1,34 @@
+.card {
+    box-shadow: 4px 4px 2px 2px black;
+    color: black;
+    margin: 1em 2em;
+    border-radius: 20px;
+    background-color: rgb(255, 255, 255);
+    width: 30vw;
+}
+.card img{
+    border-radius: 20px;
+}
+.card .informations{
+    padding: 2em;
+}
+.cards{
+    background-color: rgb(196, 243, 219);
+    overflow-x: auto;
+    display: flex;
+    overscroll-behavior-inline: contain;
+    padding: 2em 2em 4em 2em;
+}
+.cards a{
+    text-decoration: none;
+}
+.card img{
+    aspect-ratio: 16/9;
+    inline-size: 100%;
+    object-fit: cover;
+}
+@media screen and (max-width: 850px) {
+    .card{
+        width: 50vw;
+    }
+}
