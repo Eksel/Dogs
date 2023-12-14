@@ -1,4 +1,4 @@
-import React from 'react';
+import {useState,useEffect} from 'react';
 import {BrowserRouter as Router,Routes,Route} from 'react-router-dom'
 import Home from './pages/Home.jsx'
 import Dogs from './pages/Dogs.jsx';
@@ -7,7 +7,17 @@ import Dontexist from './Dontexist.jsx';
 import './App.css'
 import data from './Data.js';
 import Advert from './pages/Advert.jsx';
+import axios from 'axios';
 const App = () => {
+    const [objects, setObjects] = useState([]);
+  
+    useEffect(() => {
+        axios.get("/api/dogs/")
+        .then(res => setObjects(res.data))
+        .catch(error => {
+        console.log(error)
+        })
+    }, []);
     return (
         <Router>
             <Routes>
@@ -15,8 +25,8 @@ const App = () => {
                 <Route path="/dogs" element={<Dogs/>}/>
                 <Route path="/contact" element={<Contact/>}/>
                 <Route path='/null' element={<Dontexist/>}/>
-                {data.map((dog, index) => (
-                    <Route key={index} path={`/dog/${index}`} element={<Advert dog={dog} />}/>
+                {objects.map((dog, index) => (
+                    <Route key={index} path={`/dog/${dog._id}`} element={<Advert dog={dog} />}/>
                 ))}
             </Routes>
         </Router>

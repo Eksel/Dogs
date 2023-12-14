@@ -23,7 +23,7 @@ const data = [
     },
     {
         "id": "2",
-        "name": "Aza",
+        "name": "Asha",
         "views": "180",
         "gender": "pies",
         "breed": "Husky",

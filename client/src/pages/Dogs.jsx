@@ -6,8 +6,17 @@ import Cards from '../components/Cards';
 import data from '../Data';
 import { useState,useEffect} from 'react';
 import { Link } from 'react-router-dom';
+import axios from 'axios';
 const Dogs = () => {
-    
+    const [objects, setObjects] = useState([]);
+  
+    useEffect(() => {
+        axios.get("/api/dogs/")
+        .then(res => setObjects(res.data))
+        .catch(error => {
+        console.log(error)
+        })
+    }, []);
     
     return (
         <>
@@ -18,9 +27,9 @@ const Dogs = () => {
                         Najcześciej przeglądane
                     </h2>
                     <div className='cards'>
-                    {data.filter(dog => dog.views > 200).map((dog, index) => (
-                        <Link key={index} to={`/dog/${dog.id}`}>
-                            <Cards key={dog.id} dog={dog} />
+                    {objects.filter(dog => dog.views > 200).map((dog, index) => (
+                        <Link key={index} to={`/dog/${dog._id}`}>
+                            <Cards key={index} dog={dog} />
                         </Link>
                     ))}
                     </div>
@@ -31,9 +40,9 @@ const Dogs = () => {
                     </h2>
                     <div className='cards'>
                     
-                    {data.filter(dog => dog.breed == "Bernenski_pies_pasterski").map((dog, index) => (
-                        <Link key={index} to={`/dog/${dog.id}`}>
-                            <Cards key={dog.id} dog={dog} />
+                    {objects.filter(dog => dog.breed == "Bernenski_pies_pasterski").map((dog, index) => (
+                        <Link key={index} to={`/dog/${dog._id}`}>
+                            <Cards key={index} dog={dog} />
                         </Link>
                     ))}
                     </div>
@@ -44,9 +53,9 @@ const Dogs = () => {
                     </h2>
                     <div className='cards'>
                     
-                    {data.filter(dog => dog.breed == "Golden_retriver").map((dog, index) => (
-                        <Link key={index} to={`/dog/${dog.id}`}>
-                            <Cards key={dog.id} dog={dog} />
+                    {objects.filter(dog => dog.breed == "Golden_retriver").map((dog, index) => (
+                        <Link key={index} to={`/dog/${dog._id}`}>
+                            <Cards key={index} dog={dog} />
                         </Link>
                     ))}
                     </div>
@@ -56,9 +65,9 @@ const Dogs = () => {
                         Husky
                     </h2>
                     <div className='cards'>
-                    {data.filter(dog => dog.breed == "Husky").map((dog, index) => (
-                        <Link key={index} to={`/dog/${dog.id}`}>
-                            <Cards key={dog.id} dog={dog}/>
+                    {objects.filter(dog => dog.breed == "Husky").map((dog, index) => (
+                        <Link key={index} to={`/dog/${dog._id}`}>
+                            <Cards key={index} dog={dog}/>
                         </Link>
                     ))}
                     </div>
@@ -68,9 +77,9 @@ const Dogs = () => {
                         Pudel
                     </h2>
                     <div className='cards'>
-                    {data.filter(dog => dog.breed == "Pudel").map((dog, index) => (
-                        <Link key={index} to={`/dog/${dog.id}`}>
-                            <Cards key={dog.id} dog={dog}/>
+                    {objects.filter(dog => dog.breed == "Pudel").map((dog, index) => (
+                        <Link key={index} to={`/dog/${dog._id}`}>
+                            <Cards key={index} dog={dog}/>
                         </Link>
                         
                     ))}

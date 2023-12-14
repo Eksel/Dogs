@@ -1,12 +1,21 @@
-import { useState } from 'react'
+import { useState,useEffect} from 'react'
 import Cards from '../components/Cards'
 import { Link } from 'react-router-dom'
 import Navbar from '../components/Navbar'
 import Footer from '../components/Footer'
 import data from '../Data'
+import axios from 'axios'
 
 function Home() {
+  const [objects, setObjects] = useState([]);
   
+  useEffect(() => {
+    axios.get("/api/dogs/")
+    .then(res => setObjects(res.data))
+    .catch(error => {
+      console.log(error)
+    })
+  }, []);
   return (
     <>
     <Navbar/>
@@ -78,11 +87,11 @@ function Home() {
     <h1 className='text'>Popularne psy: </h1>
     <div className="cards">
       
-      
-      {data.filter(dog => dog.views > 200).map((dog, index) => (
+    
+      {objects && objects.filter(dog => dog.views > 200).map((dog, index) => (
         
-        <Link key={index} to={`/dog/${dog.id}`}>
-            <Cards key={dog.id} dog={dog} />
+        <Link key={index} to={`/dog/${dog._id}`}>
+            <Cards key={index} dog={dog} />
         </Link>
       ))}
       
