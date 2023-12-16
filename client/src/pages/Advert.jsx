@@ -11,7 +11,7 @@ const Advert = ({dog}) => {
   const [objects, setObjects] = useState([]);
   
   useEffect(() => {
-    axios.get("/api/dogs/")
+    axios.get("https://papito.onrender.com/dogs/")
     .then(res => setObjects(res.data))
     .catch(error => {
       console.log(error)

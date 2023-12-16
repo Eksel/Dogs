@@ -3,10 +3,19 @@ require('dotenv').config()
 const express = require("express")
 const dogsRouter = require("./routes/dogs")
 const mongoose = require('mongoose');
-
+const cors = require("cors");
 const app = express()
+
+
+
+app.use(cors({
+    origin: 'https://papito.onrender.com'
+  }));
 app.use(express.json())
 app.use((res,req,next) => {
+    res.setHeader("Access-Control-Allow-Origin", "*");
+    res.setHeader("Access-Control-Allow-Methods", "POST, GET, PUT");
+    res.setHeader("Access-Control-Allow-Headers", "Content-Type");
     console.log(req.path,req.method)
     next()
 })
