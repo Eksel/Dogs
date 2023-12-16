@@ -5,7 +5,7 @@ import Dogs from './pages/Dogs.jsx';
 import Contact from './pages/Contact.jsx';
 import Dontexist from './Dontexist.jsx';
 import './App.css'
-import data from './Data.js';
+
 import Advert from './pages/Advert.jsx';
 import axios from 'axios';
 const App = () => {

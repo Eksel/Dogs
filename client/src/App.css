@@ -158,7 +158,8 @@ header p{
   width: 50%;
 }
 .quote{
-  font-size: 3vw;
+  
+  font-size:3vw;
 }
 .conteiner section{
   width: 50%;
@@ -293,11 +294,15 @@ footer div ul img{
   }
   .conteiner section .box img{
     width: 30vw;
+    
   }
   header #name p{
       font-size: 4vw;
   } 
+  .quote{
   
+    font-size:6vw;
+  }
   header .links{
     display: none;
   }
@@ -331,4 +336,6 @@ footer div ul img{
   footer div ul li:hover{
     transform: none;
   }
+  
+  
 }

@@ -16,9 +16,9 @@ const getSingleAdverts = async (req,res) => {
     return res.status(200).json(advert)
 }
 const createAdvert = async (req,res) => {
-    const {name,views,gender,breed,breedName,age,weight,image} = req.body
+    const {name,views,gender,breed,breedName,age,weight,image,price,olxLink} = req.body
     try{
-        const advert = await Advert.create({name,views,gender,breed,breedName,age,weight,image})
+        const advert = await Advert.create({name,views,gender,breed,breedName,age,weight,image,price,olxLink})
         res.status(200).json(advert)
     }catch(error){
         res.status(404).json({error : error.message})

@@ -3,7 +3,7 @@ import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
 import "../Dogs.css"
 import Cards from '../components/Cards';
-import data from '../Data';
+
 import { useState,useEffect} from 'react';
 import { Link } from 'react-router-dom';
 import axios from 'axios';

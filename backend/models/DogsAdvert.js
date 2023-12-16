@@ -34,6 +34,14 @@ const dogsSchema = new Schema({
     image: {
         type: String,
         required: false 
+    },
+    price:{
+        type : Number ,
+        required: true
+    },
+    olxLink:{
+        type: String,
+        required:true
     }
 }, {timestamps: true})
 

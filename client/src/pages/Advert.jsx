@@ -1,18 +1,32 @@
-import React from 'react'
-// "name": "Suzi",
-//                     "views": "180",
-//                     "gender": "suka",
-//                     "breed": "Berneński pies pasterski",
-//                     "age": "7 tygodni",
-//                     "weight": "14 kg",
-//                     "image" : "" 
+import React from 'react';
+import Navbar from "../components/Navbar"
+import Footer from "../components/Footer"
+import { useEffect,useState } from 'react';
+import axios from 'axios';
+import { Link } from 'react-router-dom';
+import Cards from '../components/Cards';
 
-export default function Advert(props) {
+const Advert = () => {
+  const [objects, setObjects] = useState([]);
+  
+  useEffect(() => {
+    axios.get("/api/dogs/")
+    .then(res => setObjects(res.data))
+    .catch(error => {
+      console.log(error)
+    })
+  }, []);
   return (
     <>
-      <div>Advert {props.dog.id}</div>
-      <div>Advert {props.dog.name}</div>
+      <Navbar/>
+      <main>
+        <img src="./box1.jpg" alt="" />
+      </main>
+      <Footer/>
     </>
-    
-  )
+  );
 }
+
+export default Advert;
+
+

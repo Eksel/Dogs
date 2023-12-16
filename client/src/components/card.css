@@ -29,6 +29,11 @@
 }
 @media screen and (max-width: 850px) {
     .card{
-        width: 50vw;
+        width: 60vw;
+    }
+    .card img{
+        aspect-ratio: 16/10;
+        inline-size: 100%;
+        object-fit: cover;
     }
 }

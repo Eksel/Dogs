@@ -1,6 +1,8 @@
 import React from 'react';
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
+import image from "../assets/image.png"
+import menu from "../assets/menu.png"
 
 const Navbar = () => {
     const [condtion, setcondtion] = useState(true);
@@ -30,7 +32,7 @@ const Navbar = () => {
                 <header>
                     <div className="block" id='name'>
                         <Link to="/">
-                            <img src="./image.png" alt="" />
+                            <img src={image} alt="" />
                             <p>PAPITO</p>
                         </Link>
                     </div>
@@ -43,7 +45,7 @@ const Navbar = () => {
                         </Link>
                     </div>
                     <div className="min" onClick={() => {handleClick()}} >
-                        <img src="./menu.png" alt="" />
+                        <img src={menu} alt="" />
                     </div>
                 </header>
             </div>
