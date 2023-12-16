@@ -9,7 +9,7 @@ const app = express()
 
 
 app.use(cors({
-    origin: 'https://merry-twilight-82ae38.netlify.app/'
+    origin: 'https://papito.onrender.com/dogs/'
   }));
 app.use(express.json())
 app.use((res,req,next) => {
