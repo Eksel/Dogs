@@ -41,7 +41,7 @@ const Navbar = () => {
                             <p>Dogs</p>
                         </Link>
                         <Link to="/contact">
-                            <p>Contact us</p>
+                            <p>About us</p>
                         </Link>
                     </div>
                     <div className="min" onClick={() => {handleClick()}} >
@@ -55,7 +55,7 @@ const Navbar = () => {
                     <p>Dogs</p>
                 </Link>
                 <Link to="/contact">
-                    <p>Contact us</p>
+                    <p>About us</p> 
                 </Link>
                 </div>
             </div>

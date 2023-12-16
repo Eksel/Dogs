@@ -1,0 +1,49 @@
+
+.about section h1{
+    font-size: 3rem;
+    color: white;
+
+}
+.about section{
+    text-shadow: 2px 2px 1px black,-2px -2px 1px black,2px -2px 1px black,-2px 2px 1px black;
+    background-image: url(../assets/about.jpeg);
+    background-size: cover;
+    padding: 4rem 6em;
+}
+.about section p{
+    color: white;
+    font-size: 1.3em;
+    margin: 2em 0;
+    max-width: 1000px;
+}
+.about .conteiner{
+    background-color: #a3a388;
+    width: 100vw;
+    flex-wrap: wrap;
+    display: flex;
+    justify-content: center;
+    padding: 2em 0;
+    
+}
+.about .conteiner .box{
+    background-color: white;
+    max-width: 20em;
+    padding: 3em;
+    box-shadow: 4px 4px 2px black;
+    border-radius: 30px;
+    margin: 3em;
+}
+.about .conteiner .box h2{
+    margin: 0 0 1em 0;
+}
+@media screen and (max-width: 850px) {
+    .about section h1{
+        font-size: 2rem;
+        color: white;
+    
+    }
+    .about section {
+        font-size: 0.9rem;
+        padding: 3rem 4em;
+    }
+}

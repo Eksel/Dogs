@@ -1,0 +1,54 @@
+.advert .info{
+    margin: 0;
+    width: 100vw;
+    display: flex;
+    flex-direction: row;
+}
+.advert .info .left{
+    width: 50vw;
+}
+.advert .info .left img{
+    aspect-ratio: 16/9;
+    inline-size: 100%;
+    object-fit: cover;
+    height: 100%;
+}
+.advert .info .right{
+    width: 50vw;
+}
+.advert .info .right .name {
+    font-size: 5rem;
+    margin: 0.5em 1.2em 0.2em 1.2em;
+}
+.advert .info .right section{
+    display: flex;
+    
+}
+.advert .info .right section .box{
+    margin: 0 0 0 2em;
+}
+.advert .info .right section .box div{
+    margin:2em;
+}
+@media only screen and (max-width: 1000px){
+    .advert .info .right .name {
+        font-size: 4rem;
+        margin: 0.5em 1em 0.2em 1em;
+    }
+    .advert .info{
+        font-size: 0.8rem;
+        flex-direction: column;
+        align-items: center;
+    }
+    .advert .info .right{
+        width: 100vw;
+    }
+    .advert .info .left{
+        height: 100vw;
+        width: 100vw;
+    }
+    
+    .advert .info .right section .box div{
+        margin:2em;
+    }
+}

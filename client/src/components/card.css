@@ -14,7 +14,7 @@
 }
 .cards{
     background-color: rgb(196, 243, 219);
-    overflow-x: auto;
+    overflow-x: scroll;
     display: flex;
     overscroll-behavior-inline: contain;
     padding: 2em 2em 4em 2em;
@@ -26,6 +26,7 @@
     aspect-ratio: 16/9;
     inline-size: 100%;
     object-fit: cover;
+    
 }
 @media screen and (max-width: 850px) {
     .card{
