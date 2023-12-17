@@ -9,7 +9,7 @@ const app = express()
 
 
 app.use(cors({
-    origin: 'https://papito.onrender.com/dogs/'
+    origin: 'https://papito.onrender.com'
   }));
 app.use(express.json())
 app.use((req,res,next) => {

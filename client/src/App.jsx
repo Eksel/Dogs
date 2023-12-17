@@ -12,7 +12,7 @@ const App = () => {
     const [objects, setObjects] = useState([]);
   
     useEffect(() => {
-        axios.get("https://papito.onrender.com/dogs/")
+        axios.get("https://papito.onrender.com/api/dogs/")
         .then(res => setObjects(res.data))
         .catch(error => {
         console.log(error)
